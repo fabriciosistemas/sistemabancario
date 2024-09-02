@@ -12,7 +12,7 @@ def menu():
             [3] Extrato
             [Q] Sair
           """
-        )
+         )
 
 while True:
     menu()
@@ -20,14 +20,12 @@ while True:
 
     if opcao == '1':
         valor = float(input("Informe o valor do depósito: "))
-        #deposito
         if valor >= 0:
             saldo += valor
             operacoes.append(f"Valor R$ {valor:.2f} inserido na conta!")
         else:
             print("Falha! Valor menor que zero não pode ser usado para depósito.")
     elif opcao == '2':
-        #saque
         valor = float(input("Informe o valor do saque: "))
         if (qtd_saques < QTD_LIMITE_SAQUES) and (valor <= VALOR_LIMITE_SAQUES):
             if saldo >= valor:
@@ -42,7 +40,6 @@ while True:
         else:
             print(f"Falha! Valor maior que R$ {VALOR_LIMITE_SAQUES:.2f} ou limite de {QTD_LIMITE_SAQUES} saques excedido.")
     elif opcao == '3':
-        #extrato
         if len(operacoes) == 0:
             print("Não foram feitas operações na conta.")
         else:
